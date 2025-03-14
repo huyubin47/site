@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.resume {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px 1fr 150px;
+    gap: 1px;
+    max-width: 960px;
+    margin: 20px auto;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+.header {
+    grid-column: 1 / -1;
+    background: #e0e0e0;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.grid-item {
+    background: white;
+    padding: 10px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    grid-row: 2 / span 3;
+    background: #fff;
+    padding: 5px;
+}
+
+.avatar img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+ul, ol {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin: 3px 0;
+}
+
+h1 {
+    margin: 0;
+    color: #333;
+}
+
+.label {
+    font-weight: bold;
+    color: #666;
+}
+</style>
+</head>
+<body>
+
+<div class="resume">
+    <div class="header">
+        <h1>个人简历</h1>
+    </div>
+
+    
+    <div class="grid-item label">姓 名</div>
+    <div class="grid-item">简小丽</div>
+    <div class="grid-item label">年 龄</div>
+    <div class="grid-item">26</div>
+    <div class="grid-item avatar">
+        <img src="image.jpg" alt="简小丽">
+    </div>
+
+    <div class="grid-item label">性 别</div>
+    <div class="grid-item">女</div>
+    <div class="grid-item label">地 址</div>
+    <div class="grid-item">湖南 长沙 岳麓区</div>
+
+    <div class="grid-item label">电 话</div>
+    <div class="grid-item">135-0000-0000</div>
+    <div class="grid-item label">婚姻状况</div>
+    <div class="grid-item">已婚</div>
+
+    <!-- 其他内容块 -->
+    <div class="grid-item label full-width">求职意向</div>
+    <div class="grid-item full-width">区域经理</div>
+
+    <div class="grid-item label full-width">工作经历</div>
+    <div class="grid-item full-width">
+        
+        <ul>
+            <li>一、社区服务站慢病管理员
+                <ol>...</ol>
+            </li>
+            <li>二、药店店员（工作经验四年）
+                <ol>...</ol>
+            </li>
+        </ul>
+    </div>
+
+    
+    <div class="grid-item label full-width">教育经历</div>
+    <div class="grid-item full-width">中专学历 （本人学历不高，正在就读成人高考）</div>
+
+    
+</div>
+
+<p style="text-align: center; margin-top: 20px;">文字版</p>
+
+</body>
+</html>
