@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Balloons</title>
+    <style>
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        @keyframes fly {
+            from {
+                top: 400px;
+            }
+            to {
+                top: -100px;
+            }
+        }
+
+        @keyframes resizeAndChangeColor {
+            0% {
+                width: 50px;
+                height: 50px;
+            }
+            50% {
+                width: 80px;
+                height: 80px;
+            }
+            100% {
+                width: 50px;
+                height: 50px;
+            }
+            0% {
+                background-color: red;
+            }
+            20% {
+                background-color: yellow;
+            }
+            40% {
+                background-color: blue;
+            }
+            60% {
+                background-color: green;
+            }
+            80% {
+                background-color: orange;
+            }
+            100% {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        
+        const colors = ['red', 'yellow', 'blue', 'green', 'orange', 'purple', 'pink', 'brown', 'cyan', 'magenta'];
+
+        
+        function makeballoon() {
+            for (let i = 0; i < 10; i++) {
+                let b = document.createElement('div');
+                b.className = 'circle';
+                b.id = `b${i + 1}`;
+                
+                let randomLeft = Math.floor(Math.random() * window.innerWidth);
+                b.style.cssText = `position:absolute;left:${randomLeft}px;top:400px;`;
+                
+                let randomColor = colors[Math.floor(Math.random() * colors.length)];
+                b.style.backgroundColor = randomColor;
+               
+                b.style.animation = 'fly 10s 1, resizeAndChangeColor 10s infinite';
+                document.body.appendChild(b);
+            }
+        }
+
+        makeballoon();
+
+        var y = (a, b) => a + b;
+
+        function* gen() {
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+    </script>
+</body>
+
+</html>    
