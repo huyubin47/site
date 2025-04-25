@@ -1,0 +1,24 @@
+<script>
+// 修改函数名为按名字排序（原函数名sortbylastname应改为sortbyfirstname）
+window.onload = function() {
+    const tbl = document.getElementsByTagName('table')[0];
+    
+    // 1. 提取所有数据行（跳过表头）
+    const rows = Array.from(tbl.rows).slice(1);
+    
+    // 2. 按名字排序
+    rows.sort((a, b) => {
+        const nameA = a.cells[1].innerHTML.toLowerCase();
+        const nameB = b.cells[1].innerHTML.toLowerCase();
+        return nameA.localeCompare(nameB);
+    });
+    
+    // 3. 清空现有行（保留表头）
+    while(tbl.rows.length > 1) {
+        tbl.deleteRow(1);
+    }
+    
+    // 4. 重新添加排序后的行
+    rows.forEach(row => tbl.appendChild(row));
+};
+</script>
